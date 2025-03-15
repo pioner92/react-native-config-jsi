@@ -136,3 +136,5 @@ if (isNewArchitectureEnabled()) {
     }
     preBuild.dependsOn invokeLibraryCodegen
 }
+
+apply from: project(':react-native-config-jsi').projectDir.getPath() + "/dotenv.gradle"

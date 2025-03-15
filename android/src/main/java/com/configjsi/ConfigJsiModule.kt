@@ -1,23 +1,63 @@
 package com.configjsi
 
+import android.util.Log
+import com.facebook.react.BuildConfig
 import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.module.annotations.ReactModule
+import com.facebook.react.bridge.ReactContextBaseJavaModule
+import com.facebook.react.bridge.ReactMethod
+import com.facebook.react.common.annotations.FrameworkAPI
+import com.facebook.react.turbomodule.core.CallInvokerHolderImpl
 
-@ReactModule(name = ConfigJsiModule.NAME)
-class ConfigJsiModule(reactContext: ReactApplicationContext) :
-  NativeConfigJsiSpec(reactContext) {
 
-  override fun getName(): String {
-    return NAME
-  }
+@OptIn(FrameworkAPI::class)
+class ConfigJsiModule internal constructor(val context: ReactApplicationContext) :
+    ReactContextBaseJavaModule(context) {
 
-  // Example method
-  // See https://reactnative.dev/docs/native-modules-android
-  override fun multiply(a: Double, b: Double): Double {
-    return a * b
-  }
+    companion object {
 
-  companion object {
-    const val NAME = "ConfigJsi"
-  }
+        const val NAME = "ReactNativeConfigJsi"
+
+        init {
+//            System.loadLibrary("configjsi")
+        }
+
+        @OptIn(FrameworkAPI::class)
+        @JvmStatic
+        fun getValue(key: String):String {
+          return try {
+            val filed = BuildConfig::class.java.getField(key)
+            filed.get(null).toString()
+          } catch (e: NoSuchFieldException) {
+            "" // Если ключа нет, возвращаем пустую строку
+          } catch (e: IllegalAccessException) {
+            "" // Если нет доступа
+          }
+        }
+
+        @OptIn(FrameworkAPI::class)
+        @JvmStatic
+        external fun nativeInstall(jsiRuntimePointer: Long)
+
+    }
+
+    private val reactContext = context
+
+
+    override fun getName(): String {
+        return NAME
+    }
+
+    @OptIn(FrameworkAPI::class)
+    @ReactMethod(isBlockingSynchronousMethod = true)
+    fun install(): Boolean {
+        if (BuildConfig.DEBUG) {
+            Log.d(NAME, "install() called")
+        }
+
+        nativeInstall(
+          context.javaScriptContextHolder!!.get()
+        )
+
+        return true
+    }
 }
