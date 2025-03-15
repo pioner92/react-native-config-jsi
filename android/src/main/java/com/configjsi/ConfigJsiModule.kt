@@ -1,12 +1,11 @@
 package com.configjsi
 
 import android.util.Log
-import com.facebook.react.BuildConfig
+
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
 import com.facebook.react.common.annotations.FrameworkAPI
-import com.facebook.react.turbomodule.core.CallInvokerHolderImpl
 
 
 @OptIn(FrameworkAPI::class)
@@ -18,19 +17,22 @@ class ConfigJsiModule internal constructor(val context: ReactApplicationContext)
         const val NAME = "ReactNativeConfigJsi"
 
         init {
-//            System.loadLibrary("configjsi")
+            System.loadLibrary("configjsi")
         }
+
+        lateinit var  instance: ConfigJsiModule
 
         @OptIn(FrameworkAPI::class)
         @JvmStatic
         fun getValue(key: String):String {
           return try {
-            val filed = BuildConfig::class.java.getField(key)
-            filed.get(null).toString()
+              val buildConfigClass = Class.forName("${instance.context.packageName}.BuildConfig")
+              val field = buildConfigClass.getDeclaredField(key)
+              field.get(null).toString()
           } catch (e: NoSuchFieldException) {
-            "" // Если ключа нет, возвращаем пустую строку
+            ""
           } catch (e: IllegalAccessException) {
-            "" // Если нет доступа
+            ""
           }
         }
 
@@ -41,6 +43,10 @@ class ConfigJsiModule internal constructor(val context: ReactApplicationContext)
     }
 
     private val reactContext = context
+
+    init {
+        instance = this
+    }
 
 
     override fun getName(): String {
