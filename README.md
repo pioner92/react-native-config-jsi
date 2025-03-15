@@ -17,8 +17,6 @@ npm install react-native-config-jsi
 yarn add react-native-config-jsi
 ```
 
-> **⚠️ Important:** Ensure your project supports **JSI** and has the proper build setup for C++.
-
 ---
 
 ## 🔧 Setup
@@ -33,8 +31,15 @@ APP_NAME=MyAwesomeApp
 
 ---
 
-### 2️⃣ Configure `android/app/build.gradle`
+# iOS
+```bash
+cd ./ios
+pod install
+```
 
+---
+
+# Android
 At the **bottom** of `android/app/build.gradle`, add the following line:
 
 ```gradle
@@ -55,9 +60,6 @@ import { RNConfig } from "react-native-config-jsi";
 const apiKey = RNConfig.get("API_KEY");
 console.log("API_KEY:", apiKey);
 ```
-
-Since this library is **built on JSI**, it provides **instant access** to environment variables without relying on the React Native bridge.
-
 ---
 
 ## ⚡ Features
