@@ -1,14 +1,11 @@
 import { NativeModules } from 'react-native';
 
 declare global {
-  type TGetValue = (key: string) => void;
-  type TConfigJSI = {
+  var getValue: (key: string) => void;
+  var ConfigJSI: {
     keys: string[];
-    get: TGetValue;
+    get: (key: string) => void;
   };
-
-  var getValue: TGetValue;
-  var ConfigJSI: TConfigJSI;
 }
 
 let _getValue = global.getValue;

@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { Text, View, StyleSheet, NativeModules } from 'react-native';
-import { getValue } from 'react-native-config-jsi';
 
 export default function App() {
   useEffect(() => {
