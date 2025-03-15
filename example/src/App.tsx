@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-import { Text, View, StyleSheet, NativeModules } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
+import { RNConfig } from 'react-native-config-jsi';
 
 export default function App() {
   useEffect(() => {
     try {
-      console.log('CALL', NativeModules.ReactNativeConfigJsi?.install);
-      // console.log('RES', global.ConfigJSI.keys);
+      RNConfig.get('API_URL');
     } catch (e) {
       console.error('ERR', e);
     }

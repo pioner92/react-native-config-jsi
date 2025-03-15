@@ -1,11 +1,7 @@
 import { NativeModules } from 'react-native';
 
 declare global {
-  var getValue: (key: string) => void;
-  var ConfigJSI: {
-    keys: string[];
-    get: (key: string) => void;
-  };
+  var getValue: (key: string) => string;
 }
 
 let _getValue = global.getValue;
@@ -18,4 +14,9 @@ if (!_getValue) {
     console.log('react-native-config initialized successfully');
   }
 }
-export const getValue = _getValue;
+
+export const RNConfig = {
+  get: (key: string) => {
+    return _getValue(key);
+  },
+};
