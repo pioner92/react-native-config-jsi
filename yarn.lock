@@ -10532,19 +10532,8 @@ __metadata:
     react: 19.0.0
     react-native: 0.78.0
     react-native-builder-bob: ^0.37.0
-    react-native-config-jsi: "file:../"
   languageName: unknown
   linkType: soft
-
-"react-native-config-jsi@file:../::locator=react-native-config-jsi-example%40workspace%3Aexample":
-  version: 0.1.3
-  resolution: "react-native-config-jsi@file:../#../::hash=39f1e3&locator=react-native-config-jsi-example%40workspace%3Aexample"
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-  checksum: 2b290691ea7092854e7e09baacffd5e34a05c98726b43cee7c7138234884005688beef036488a3f105f2c2db1be1be9dd442ecfaf48ece4ddd1ea15770546709
-  languageName: node
-  linkType: hard
 
 "react-native-config-jsi@workspace:.":
   version: 0.0.0-use.local
@@ -10558,6 +10547,7 @@ __metadata:
     "@types/jest": ^29.5.5
     "@types/react": ^18.2.44
     commitlint: ^17.0.2
+    conventional-changelog-conventionalcommits: ^8.0.0
     del-cli: ^5.1.0
     eslint: ^8.51.0
     eslint-config-prettier: ^9.0.0

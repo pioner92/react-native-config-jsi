@@ -15,6 +15,7 @@
     "cpp",
     "*.podspec",
     "react-native.config.js",
+    "src/scripts/generate-xcconfig.sh",
     "!ios/build",
     "!android/build",
     "!android/gradle",
@@ -71,6 +72,7 @@
     "@types/jest": "^29.5.5",
     "@types/react": "^18.2.44",
     "commitlint": "^17.0.2",
+    "conventional-changelog-conventionalcommits": "^8.0.0",
     "del-cli": "^5.1.0",
     "eslint": "^8.51.0",
     "eslint-config-prettier": "^9.0.0",
@@ -120,7 +122,7 @@
     },
     "plugins": {
       "@release-it/conventional-changelog": {
-        "preset": "angular"
+        "preset": "conventionalcommits"
       }
     }
   },
@@ -168,19 +170,6 @@
         }
       ]
     ]
-  },
-  "codegenConfig": {
-    "name": "RNConfigJsiSpec",
-    "type": "modules",
-    "jsSrcsDir": "src",
-    "outputDir": {
-      "ios": "ios/generated",
-      "android": "android/generated"
-    },
-    "android": {
-      "javaPackageName": "com.configjsi"
-    },
-    "includesGeneratedCode": true
   },
   "create-react-native-library": {
     "type": "turbo-module",
