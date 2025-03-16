@@ -1,70 +1,45 @@
 # 🚀 react-native-config-jsi
 
-A **high-performance** JSI-based React Native library for accessing `.env` variables natively.  
-Built using **C++ and JSI** for ultra-fast access without the need for a bridge.
+**Fast JSI-based React Native library to access `.env` variables natively with C++ performance.**
 
 ---
 
-## 📦 Installation
+## 📦 Install
 
-### Using npm
 ```sh
-npm install react-native-config-jsi
-```
-
-### Using yarn
-```sh
-yarn add react-native-config-jsi
+npm install react-native-config-jsi # or yarn add react-native-config-jsi
 ```
 
 ---
 
-## 🔧 Setup
+## 🔧 Quick Setup
 
-### 1️⃣ Create a `.env` file in the root of your project
-
-Add environment variables inside `.env`:
-```
+1. Create `.env` at project root:
+```env
 API_KEY=your_api_key
 APP_NAME=MyAwesomeApp
 ```
 
----
-
-## 🍏 iOS
-
-### 1. Install CocoaPods dependencies:
+2. **iOS:**
 ```bash
-cd ./ios
-pod install
+cd ios && pod install
 ```
-
-### 2. Add the custom script to Xcode Build Phases:
-Open Xcode → select your Target → go to **Build Phases** → click **+ New Run Script Phase**  
-and paste the following command:
+Add to Xcode → Target → Build Phases → **+ New Run Script Phase**:
 ```bash
 bash "${SRCROOT}/../node_modules/react-native-config-jsi/src/scripts/generate.sh"
 ```
 
----
-
-## 🤖 Android
-
-At the **bottom** of `android/app/build.gradle`, add the following line:
-
+3. **Android:**
+Add to bottom of `android/app/build.gradle`:
 ```gradle
 apply from: project(':react-native-config-jsi').projectDir.getPath() + "/dotenv.gradle"
 ```
-
-This will ensure that the `.env` variables are properly loaded into the build.
 
 ---
 
 ## 🚀 Usage
 
-Import the library and retrieve environment variables natively:
-
-```javascript
+```js
 import { RNConfig } from "react-native-config-jsi";
 
 const apiKey = RNConfig.get("API_KEY");
@@ -73,12 +48,12 @@ console.log("API_KEY:", apiKey);
 
 ---
 
-## ⚡ Features
+## ⚡ Highlights
 
-- ✅ **Blazing fast** thanks to JSI (JavaScript Interface)
-- ✅ **Written in C++** for performance optimization
-- ✅ **No async calls** – variables are accessed synchronously
-- ✅ **No extra dependencies** – lightweight and efficient
+- 🔥 Ultra-fast JSI native access
+- ⚙️ Built in C++
+- 🧩 Synchronous API
+- 🪶 No extra dependencies
 
 ---
 
@@ -88,4 +63,4 @@ MIT
 
 ---
 
-Now you're all set! 🎉 Happy coding with **react-native-config-jsi**! 🚀
+🎉 **Enjoy using react-native-config-jsi!** 🚀
