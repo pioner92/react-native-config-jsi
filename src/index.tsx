@@ -17,6 +17,9 @@ if (!_getValue) {
 
 export const RNConfig = {
   get: (key: string) => {
+    if (typeof key !== 'string') {
+      throw new Error('Key must be a string');
+    }
     return _getValue(key);
   },
 };
