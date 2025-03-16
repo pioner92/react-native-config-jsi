@@ -1,6 +1,6 @@
 {
   "name": "react-native-config-jsi",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "💪 react native config jsi",
   "main": "./lib/commonjs/index.js",
   "module": "./lib/module/index.js",
