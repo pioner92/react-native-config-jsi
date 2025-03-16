@@ -1,4 +1,4 @@
-#import "ConfigJsi.h"
+#import "ReactNativeConfigJSI.h"
 
 #import <React/RCTBridge+Private.h>
 #import <React/RCTBridge.h>
@@ -18,7 +18,6 @@ RCT_EXPORT_MODULE()
 using namespace facebook;
 using namespace std;
 
-
 RCT_EXPORT_BLOCKING_SYNCHRONOUS_METHOD(install) {
   NSLog(@"Installing JSI bindings for react-native-config-jsi...");
   RCTBridge* bridge = [RCTBridge currentBridge];
@@ -35,10 +34,12 @@ RCT_EXPORT_BLOCKING_SYNCHRONOUS_METHOD(install) {
 
   auto jsCallInvoker = bridge.jsCallInvoker;
 
-  initialize(*jsiRuntime);
+  RNConfigJSI::initialize(*jsiRuntime);
 
   return @true;
 }
+
+namespace RNConfigJSI {
 
 void initialize(jsi::Runtime& rt) {
   jsi::Function handler = jsi::Function::createFromHostFunction(
@@ -65,5 +66,5 @@ void initialize(jsi::Runtime& rt) {
 
   rt.global().setProperty(rt, "getValue", std::move(handler));
 }
-
+}
 @end
