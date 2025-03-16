@@ -10537,12 +10537,12 @@ __metadata:
   linkType: soft
 
 "react-native-config-jsi@file:../::locator=react-native-config-jsi-example%40workspace%3Aexample":
-  version: 0.1.0
-  resolution: "react-native-config-jsi@file:../#../::hash=e0e7bd&locator=react-native-config-jsi-example%40workspace%3Aexample"
+  version: 0.1.3
+  resolution: "react-native-config-jsi@file:../#../::hash=39f1e3&locator=react-native-config-jsi-example%40workspace%3Aexample"
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 4e69ca36426bacde71292e6e77ec28ee066fe8f80f2488cbbcc3eb1cae789aeb28dc39d9108ba7785947df9a14393ac182303db3654bc9940a6fc5232b2abb42
+  checksum: 2b290691ea7092854e7e09baacffd5e34a05c98726b43cee7c7138234884005688beef036488a3f105f2c2db1be1be9dd442ecfaf48ece4ddd1ea15770546709
   languageName: node
   linkType: hard
 
