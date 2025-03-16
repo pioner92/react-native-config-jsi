@@ -19,8 +19,10 @@ yarn add react-native-config-jsi
 
 1. Create `.env` at project root:
 ```env
+#EXAMPLE
 API_KEY=your_api_key
 APP_NAME=MyAwesomeApp
+...
 ```
 
 2. **iOS:**
@@ -41,7 +43,7 @@ apply from: project(':react-native-config-jsi').projectDir.getPath() + "/dotenv.
 ---
 
 ## 🚀 Usage
-
+> ⚠️ **Note:** After updating `.env`, rebuild or restart your app to apply changes.
 ```js
 import { RNConfig } from "react-native-config-jsi";
 
