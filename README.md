@@ -33,8 +33,17 @@ APP_NAME=MyAwesomeApp
 
 # iOS
 ```bash
-cd ./ios
+### 1. Install CocoaPods dependencies:
+ cd ./ios
 pod install
+
+### 1. Add the custom script to Xcode Build Phases:
+Open Xcode → select your Target → go to Build Phases → click + New Run Script Phase
+and paste the following command:
+
+bash "${SRCROOT}/../node_modules/react-native-config-jsi/src/scripts/generate-xcconfig.sh"
+
+
 ```
 
 ---
