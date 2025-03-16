@@ -8,4 +8,8 @@ if (!_getValue) {
         console.log('react-native-config initialized successfully');
     }
 }
-export const getValue = _getValue;
+export const RNConfig = {
+    get: (key) => {
+        return _getValue(key);
+    },
+};
