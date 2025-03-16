@@ -43,7 +43,7 @@ pod install
 Open Xcode → select your Target → go to **Build Phases** → click **+ New Run Script Phase**  
 and paste the following command:
 ```bash
-bash "${SRCROOT}/../node_modules/react-native-config-jsi/src/scripts/generate-xcconfig.sh"
+bash "${SRCROOT}/../node_modules/react-native-config-jsi/src/scripts/generate.sh"
 ```
 
 ---
