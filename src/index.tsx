@@ -1,7 +1,7 @@
 import { NativeModules } from 'react-native';
 
 declare global {
-  var getValue: (key: string) => string;
+  var getValue: (key: string) => string | undefined;
 }
 
 let _getValue = global.getValue;
