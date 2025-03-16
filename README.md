@@ -37,7 +37,7 @@ APP_NAME=MyAwesomeApp
  cd ./ios
 pod install
 
-### 1. Add the custom script to Xcode Build Phases:
+### 2. Add the custom script to Xcode Build Phases:
 Open Xcode → select your Target → go to Build Phases → click + New Run Script Phase
 and paste the following command:
 
