@@ -19,8 +19,10 @@ yarn add react-native-config-jsi
 
 1. Create `.env` at project root:
 ```env
+#EXAMPLE
 API_KEY=your_api_key
 APP_NAME=MyAwesomeApp
+...
 ```
 
 2. **iOS:**
