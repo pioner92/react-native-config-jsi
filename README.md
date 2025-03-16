@@ -31,24 +31,25 @@ APP_NAME=MyAwesomeApp
 
 ---
 
-# iOS
-```bash
+## 🍏 iOS
+
 ### 1. Install CocoaPods dependencies:
- cd ./ios
+```bash
+cd ./ios
 pod install
+```
 
 ### 2. Add the custom script to Xcode Build Phases:
-Open Xcode → select your Target → go to Build Phases → click + New Run Script Phase
+Open Xcode → select your Target → go to **Build Phases** → click **+ New Run Script Phase**  
 and paste the following command:
-
+```bash
 bash "${SRCROOT}/../node_modules/react-native-config-jsi/src/scripts/generate-xcconfig.sh"
-
-
 ```
 
 ---
 
-# Android
+## 🤖 Android
+
 At the **bottom** of `android/app/build.gradle`, add the following line:
 
 ```gradle
@@ -69,9 +70,11 @@ import { RNConfig } from "react-native-config-jsi";
 const apiKey = RNConfig.get("API_KEY");
 console.log("API_KEY:", apiKey);
 ```
+
 ---
 
 ## ⚡ Features
+
 - ✅ **Blazing fast** thanks to JSI (JavaScript Interface)
 - ✅ **Written in C++** for performance optimization
 - ✅ **No async calls** – variables are accessed synchronously
@@ -80,6 +83,7 @@ console.log("API_KEY:", apiKey);
 ---
 
 ## 📜 License
+
 MIT
 
 ---
