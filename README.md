@@ -6,8 +6,11 @@
 
 ## 📦 Install
 
+To install the library, use either npm or yarn:
 ```sh
-npm install react-native-config-jsi # or yarn add react-native-config-jsi
+npm install react-native-config-jsi
+
+yarn add react-native-config-jsi
 ```
 
 ---
