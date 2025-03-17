@@ -26,9 +26,8 @@ class ConfigJsiModule internal constructor(val context: ReactApplicationContext)
         @JvmStatic
         fun getValue(key: String):String {
           return try {
-              val buildConfigClass = Class.forName("${instance.context.packageName}.BuildConfig")
-              val field = buildConfigClass.getDeclaredField(key)
-              field.get(null).toString()
+            val field = BuildConfig::class.java.getDeclaredField(key)
+            field.get(null).toString()
           } catch (e: NoSuchFieldException) {
             ""
           } catch (e: IllegalAccessException) {

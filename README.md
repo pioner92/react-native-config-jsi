@@ -33,13 +33,6 @@ Add to Xcode → Target → Build Phases → **+ New Run Script Phase**:
 ```bash
 bash "${SRCROOT}/../node_modules/react-native-config-jsi/src/scripts/generate.sh"
 ```
-
-3. **Android:**
-Add to bottom of `android/app/build.gradle`:
-```gradle
-apply from: project(':react-native-config-jsi').projectDir.getPath() + "/dotenv.gradle"
-```
-
 ---
 
 ## 🚀 Usage

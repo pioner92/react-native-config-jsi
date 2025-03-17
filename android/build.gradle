@@ -164,3 +164,5 @@ if (isNewArchitectureEnabled()) {
     codegenJavaPackageName = "com.configjsi"
   }
 }
+
+apply from: "dotenv.gradle"
