@@ -1,6 +1,6 @@
 {
   "name": "react-native-config-jsi",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "⚡️ Fast JSI-based library to access .env variables natively with C++ performance.",
   "main": "./lib/commonjs/index.js",
   "module": "./lib/module/index.js",
